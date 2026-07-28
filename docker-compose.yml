@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: jangokeeper-postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME:-jangokeeper}
+      POSTGRES_USER: ${DB_USERNAME:-jangokeeper}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-jangokeeper}
+    ports:
+      - "5432:5432"
+    volumes:
+      - jangokeeper-pgdata:/var/lib/postgresql/data
+
+volumes:
+  jangokeeper-pgdata:
