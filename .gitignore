@@ -26,3 +26,9 @@ replay_pid*
 .idea/*
 build/*
 .idea/
+
+# Environment variables (secrets)
+.env
+.env.example
+src/main/resources/application.properties
+application.properties

@@ -3,9 +3,9 @@ services:
     image: postgres:16-alpine
     container_name: jangokeeper-postgres
     environment:
-      POSTGRES_DB: jangokeeper
-      POSTGRES_USER: jangokeeper
-      POSTGRES_PASSWORD: jangokeeper
+      POSTGRES_DB: ${DB_NAME:-jangokeeper}
+      POSTGRES_USER: ${DB_USERNAME:-jangokeeper}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-jangokeeper}
     ports:
       - "5432:5432"
     volumes:
